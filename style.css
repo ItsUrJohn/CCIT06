@@ -1,0 +1,367 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #080808;
+    background-blend-mode: multiply;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.navbar ul li a{
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: 500;
+}
+.navbar ul li a:hover{
+    color: #f8f5f5;
+}
+ #banner {
+    height: 90vh;
+    background: linear-gradient(to right, hsla(0, 2%, 12%, 0.856), rgba(44, 42, 42, 0.315)), url(image/naruto.jpg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.btn {
+    padding: 15px 30px;
+    font-weight: 900;
+    border-radius: 60px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.btn-brand {
+    color: #1c1c1c;
+    background-color: #437874;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn-brand:hover {
+    color: #676763;
+    border: 2px solid #0b0707;
+}
+
+section {
+    padding: 100px 0 ;
+}
+#about{
+    padding: 80px 0;
+    color: #ababab;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-1{
+    flex-basis: 35%;
+}
+.about-col-1 img{
+    width: 100%;
+    height: 50vh;
+    border-radius: 15px;
+}
+.about-col-2{
+    flex-basis: 60%;
+}
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color:#521e93;
+}
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #660416;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+.tab-links.active-link::after{
+    width: 50%;
+}
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+.tab-contents ul li span{
+    color: #400e6e;
+    font-size: 14px;
+}
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+#services{
+    padding: 30px 0;
+}
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.services-list div{
+    background: #333332;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+}
+.services-list div i{
+    font-size: 35px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+.services-list div h2{
+    font-size: 30px;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.services-list div p{
+    font-size: 15px;
+    color: #fff;
+    font-weight: 500;
+}
+.services-list div a{
+    text-decoration: none;
+    color: #f5f0f0;
+    font-size: 20px;
+    margin-top: 20px;
+    display: inline-flex;
+}
+.services-list div:hover{
+    background: #3461c2;
+    transform: translateY(-10px);
+}
+#cta {
+    margin-top: 50px;
+    height: 70vh;
+    background: linear-gradient(to right, hsla(0, 2%, 17%, 0.856), rgba(44, 42, 42, 0.315)), url(image/sasuke-uchiha-3840x2160-11023.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+#portfolio{
+    padding: 50px;
+}
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.work{
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+.work img{
+    width: 100%;
+    border-radius: 10px;
+    height: 55vh;
+    display: block;
+    transition: transform 0.5s;
+}
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6),#9e9aa2);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    transition: height 0.5s;
+}
+.layer a{
+    font-weight: 500;
+    font-size: 20px;
+}
+.work:hover img{
+    transform: scale(1.1);
+}
+.work:hover .layer{
+    height: 100%;
+}
+#ctaa {
+    margin-top: 50px;
+    height: 70vh;
+    background: linear-gradient(to right, hsla(0, 2%, 17%, 0.856), rgba(44, 42, 42, 0.315)), url(image/Mikael\ Lima.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.testimonials  {
+    padding: 30px;
+    border: 2px solid rgb(148, 132, 132);
+    border-radius: 30px;
+}
+.testimonials{
+    background: #0c0c0c;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s ease;
+}
+.testimonials  img {
+   width: 65px;
+    border-radius: 100px;
+}
+
+.testimonials  {
+     color: rgba(250, 249, 251, 0.841);
+}
+.testimonials h3{
+    color: #fff;
+    font-size: 30px;
+}
+.testimonials:hover{
+    background: #2e2e2f;
+    transform: translateY(-10px);
+}
+#reviews h2 {
+    font-size: 55px;
+    font-weight: 900;
+    color:#9858d3;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000000;
+}
+#reviews p{
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;    
+}
+#ctaaa{
+    margin-top: 50px;
+    height: 70vh;
+    background: linear-gradient(to right, hsla(0, 2%, 17%, 0.856), rgba(44, 42, 42, 0.315)), url(image/kunoha.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.faq-section{
+    max-width: 800px;
+    margin: auto;
+}
+.accordion-item{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 0 !important;
+}
+.accordion-button{
+    background-color: #fff;
+    border-bottom: 1px solid #4e4a4a;
+    border-radius: 0 !important;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #d3d3eb;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.accordion-body{
+    border-left: 3px solid #171617;
+    padding: 10px 15px;
+    margin-left: 0;
+    background-color: #caa1a1;
+}
+.accordion-button:not(.collapsed){
+    background-color: #c6c6f1;
+    color: #fff;
+}
+.accordion-button:hover{
+    background-color: #87848d;
+    color: #fff;
+}
+#faq{
+    background-color: #141413;
+}
+footer {
+    margin-top: 1px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: rgb(76, 72, 83) ;
+}
+
+#footer ul.list-unstyled li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#footer ul.list-unstyled li:hover a {
+    color:#400e6e;
+    
+}
+.btn-outline-light {
+    border-color: #FFF;
+    color: #FFF;
+    border-radius: 0;
+}
+@media(max-width: 767px){
+    .sidebar{
+        background-color: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+    }
+    .card{
+        margin-bottom: 20px;
+    }
+    .section{
+        padding: 60px 20px;
+    }
+    #banner img{
+        height: 350px;
+        width: 350px;
+        object-fit: cover;
+    }
+    #about h2{
+        margin-top: 20px;
+    }
+    #about img{
+        height: 350px;
+        width: 350px;
+        object-fit: center;
+    }
+
+}
