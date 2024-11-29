@@ -1,3 +1,29 @@
+<?php
+session_start();
+
+// Redirect to login if not authenticated
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
+}
+
+// Prevent caching
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Pragma: no-cache");
+header("Expires: 0");
+
+// Display content if authenticated
+$username = $_SESSION['username'];
+
+
+?>
+<script>
+    window.onload = function () {
+        if (performance.navigation.type === 2) { // Detects "Back" navigation
+            location.reload(); // Forces reload from server
+        }
+    };
+</script>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,12 +82,12 @@
             </li>
             <li class="nav-item dropdown start-end">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Account
+            Menu
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">#</a></li>
+            <li><a class="dropdown-item" href="#">Manage Services</a></li>
+            <li><a class="dropdown-item" href="#">Manage Reviews</a></li>
             <li><a class="dropdown-item" href="logout.php">Logout</a></li>
-            <li><a class="dropdown-item" href="#">ChangePassword</a></li>
           </ul>
         </li>
           </ul>

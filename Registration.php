@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 					<label>Confirm Password</label>
 				</div>
 				<div class="remember-forgot">
-					<label><input type="checkbox">Already Have acc??</label>
+					<label><input type="checkbox">i accept ther Terms</label>
 					<a href="Login.php">Login Here</a>
 				</div>
 				<button type="submit" class="btn">Register</button>
