@@ -59,7 +59,7 @@
             Account
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Nigga</a></li>
+            <li><a class="dropdown-item" href="#">#</a></li>
             <li><a class="dropdown-item" href="logout.php">Logout</a></li>
             <li><a class="dropdown-item" href="#">ChangePassword</a></li>
           </ul>
