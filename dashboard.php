@@ -92,14 +92,6 @@ $username = $_SESSION['username'];
             <li class="nav-item mx-2">
               <a class="nav-link" href="#footer">Contact</a>
             </li>
-            <li class="nav-item dropdown start-end">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Menu
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="user.php"> Manage Account</a></li>
-          </ul>
-        </li>
           </ul>
         </div>
       </div>
