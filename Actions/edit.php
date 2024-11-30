@@ -1,7 +1,8 @@
 <?php 
  $conn = mysqli_connect("Localhost","root"  ,"" ,   'ccit06');
 ?>
-<?php   
+<?php
+session_start();   
     $id = $_GET['id'];
     $query = $conn->query("SELECT * FROM users WHERE id = '$id'");
 
@@ -17,6 +18,7 @@
 
         $conn ->query("UPDATE users SET username = '$username', password_hash = '$password' WHERE id = $id");
 
+        $_SESSION['status'] ="Sucessfully Edit";
         header ("location: ../dashboard.php");
     }
     

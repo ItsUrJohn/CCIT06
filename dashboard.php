@@ -28,6 +28,18 @@ $username = $_SESSION['username'];
 <html lang="en">
 
 <head>
+      <?php
+
+      if(isset($_SESSION['status'])) 
+      {  ?>
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong> Hey!!</strong> <?php echo $_SESSION['status']; ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+      <?php 
+        unset($_SESSION['status']);
+      }
+      ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
@@ -86,7 +98,6 @@ $username = $_SESSION['username'];
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="user.php"> Manage Account</a></li>
-            <li><a class="dropdown-item" href="logout.php">Logout</a></li>
           </ul>
         </li>
           </ul>

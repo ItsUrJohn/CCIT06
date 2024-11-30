@@ -18,7 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bind_param('ss', $username, $passwordHash);
         if ($stmt->execute()) {
             $_SESSION['status'] = 'Register Succesfully!!';
-            header('location: Login.php');
         } else {
             echo "Error: " . $stmt->error;
         }
@@ -28,12 +27,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
+	      <?php
+
+		if(isset($_SESSION['status'])) 
+		{  ?>
+				<div class="alert alert-warning alert-dismissible fade show" role="alert">
+					<strong> Hey!!</strong> <?php echo $_SESSION['status']; ?>
+		  				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			<?php 
+  		unset($_SESSION['status']);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="styleregister.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<title>Document</title>
 </head>
 <body>

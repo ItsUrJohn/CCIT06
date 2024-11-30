@@ -18,18 +18,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (password_verify($password, $passwordHash)) {
                 $_SESSION['user_id'] = $id;
                 $_SESSION['username'] = $username; // Optional: Store username for personalization
+				$_SESSION['status'] = "Login Succesfully";
                 header("Location: dashboard.php"); // Redirect to dashboard
                 exit;
             } else {
-                echo "Invalid credentials.";
+				$_SESSION['status'] = "The Password & Username does not Match";
             }
         } else {
-            echo "User not found.";
+			$_SESSION['status'] = "User Not Found";
         }
         $stmt->close();
     } else {
-        echo "Statement preparation failed!";
+		$_SESSION['status'] = "Something Went Wrong";
     }
+}
+?>
+      <?php
+
+if(isset($_SESSION['status'])) 
+{  ?>
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">
+		<strong> Hey!!</strong> <?php echo $_SESSION['status']; ?>
+		  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+<?php 
+  unset($_SESSION['status']);
 }
 ?>
 <!DOCTYPE html>
@@ -38,6 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="stylelogin.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<title>Document</title>
 </head>
 <body>
