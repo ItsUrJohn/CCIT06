@@ -16,9 +16,12 @@ require 'db.php';
             <td>Username</td>
             <td>Password</td>
             <td>Actions</td>
+            <?php 
+            $conn = mysqli_connect("Localhost","root"  ,"" ,   'ccit06');
+            ?>
 
         <?php 
-        $query = $conn ->query ("SELECT * FROM users");
+        $query = $conn->query("SELECT * FROM users");
         while( $data = mysqli_fetch_array($query) ) {
         ?>
         <tr>
@@ -26,9 +29,9 @@ require 'db.php';
          <td> <?php echo $data['username']?></td>
          <td> <?php echo $data['password_hash']?></td>
          <td> 
-            <a href="Actions/edit.php?=<?php $data['id']?>"><button type="button">Edit </button>
+            <a href="Actions/edit.php?id=<?php echo $data['id']?>"><button type="button">Edit </button>
             </a>
-            <a href="Actions/delete.php"><button type="button">Delete </button>
+            <a href="Actions/delete.php?id=<?php echo $data['id']?>"><button type="button">Delete </button>
             </a>
          </td>
         </tr>

@@ -85,8 +85,7 @@ $username = $_SESSION['username'];
             Menu
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Manage Services</a></li>
-            <li><a class="dropdown-item" href="#">Manage Reviews</a></li>
+            <li><a class="dropdown-item" href="user.php"> Manage Account</a></li>
             <li><a class="dropdown-item" href="logout.php">Logout</a></li>
           </ul>
         </li>
