@@ -1,34 +1,7 @@
 <?php 
 session_start();
 require 'db.php'; 
-?>    
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylelogin.css">
-    <title>LoginPage</title>
-</head>
-<body>
-<h2>Sign in/up Form</h2>
-<div class="container" id="container">
-	<div class="form-container sign-up-container">
-		<form method="POST">
-			<h1>Create Account</h1>
-			<div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div>
-			<span>or use your email for registration</span>
-			<input type="username" name="username" placeholder="Username" required />
-			<input type="password" name="password" placeholder="Password" required />
-			<input type="password" name="password_confirm" placeholder="Confirm Password" required />
-			<button>Sign Up</button>
-		</form>
-	</div>
-   <?php if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = htmlspecialchars($_POST['username']);
     $password = $_POST['password'];
 
@@ -56,6 +29,57 @@ require 'db.php';
         $stmt->close();
     } else {
 		$_SESSION['status'] = "Something Went Wrong";
+    }
+}
+?>    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylelogin.css">
+    <title>LoginPage</title>
+</head>
+<body>
+<h2>Sign in/up Form</h2>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form method="POST">
+			<h1>Create Account</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your email for registration</span>
+			<input type="username" name='username' placeholder="Username" required />
+			<input type="password" name='password' placeholder="Password" required />
+			<input type="password" name='password_confirm' placeholder="Confirm Password" required />
+			<button>Sign Up</button>
+		</form>
+	</div>
+   <?php if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $username = htmlspecialchars($_POST['username']);
+    $password = $_POST['password'];
+    $passwordConfirm = $_POST['password_confirm'];
+
+    if ($password !== $passwordConfirm) {
+        die('Passwords do not match.');
+    }
+
+    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+
+    $stmt = $conn->prepare('INSERT INTO users (username, password_hash) VALUES (?, ?)');
+    if ($stmt) {
+        $stmt->bind_param('ss', $username, $passwordHash);
+        if ($stmt->execute()) {
+            $_SESSION['status'] = 'Register Succesfully!!';
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+        $stmt->close();
+    } else {
+        echo "Statement preparation failed!";
     }
 }
 ?>
