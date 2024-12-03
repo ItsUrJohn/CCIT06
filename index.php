@@ -1,6 +1,7 @@
 <?php 
 session_start();
-require 'db.php'; 
+require 'db.php';
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = htmlspecialchars($_POST['username']);
     $password = $_POST['password'];
@@ -58,31 +59,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			<button>Sign Up</button>
 		</form>
 	</div>
-   <?php if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = htmlspecialchars($_POST['username']);
-    $password = $_POST['password'];
-    $passwordConfirm = $_POST['password_confirm'];
-
-    if ($password !== $passwordConfirm) {
-        die('Passwords do not match.');
-    }
-
-    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-
-    $stmt = $conn->prepare('INSERT INTO users (username, password_hash) VALUES (?, ?)');
-    if ($stmt) {
-        $stmt->bind_param('ss', $username, $passwordHash);
-        if ($stmt->execute()) {
-            $_SESSION['status'] = 'Register Succesfully!!';
-        } else {
-            echo "Error: " . $stmt->error;
-        }
-        $stmt->close();
-    } else {
-        echo "Statement preparation failed!";
-    }
-}
-?>
 	<div class="form-container sign-in-container">
 		<form method="POST">
 			<h1>Sign in</h1>
@@ -113,15 +89,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		</div>
 	</div>
 </div>
-
-<footer>
-	<p>
-		Created with <i class="fa fa-heart"></i> by
-		<a target="_blank" href="https://florin-pop.com">Florin Pop</a>
-		- Read how I created this and how you can join the challenge
-		<a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>.
-	</p>
-</footer>
 <script>
     const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
@@ -137,3 +104,31 @@ signInButton.addEventListener('click', () => {
 </script>
 </body>
 </html>
+<?php 
+	include('db.php');
+	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    	$username = htmlspecialchars($_POST['username']);
+    	$password = $_POST['password'];
+    	$passwordConfirm = $_POST['password_confirm'];
+
+    if ($password !== $passwordConfirm) {
+        echo 'Passwords do not match.';
+    }
+
+    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+
+    $stmt = $conn->prepare('INSERT INTO users (username, password_hash) VALUES (?, ?)');
+    if ($stmt) {
+        $stmt->bind_param('ss', $username, $passwordHash);
+        if ($stmt->execute()) {
+            $_SESSION['status'] = 'Register Succesfully!!';
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+        $stmt->close();
+    } else {
+        echo "Statement preparation failed!";
+    }
+}
+
+?>
