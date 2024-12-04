@@ -1,0 +1,9 @@
+*{
+    font-style: italic;
+    margin: 0;
+    height: 100vh;
+}
+body{
+ background: url(/image/naruto.jpg.jpg), none;
+ background-size: cover;
+}

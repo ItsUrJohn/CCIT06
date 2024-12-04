@@ -21,39 +21,34 @@ require 'db.php';
  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="userstyle.css">
+    <link rel="stylesheet" href="styleuser.css">
     <title>Document</title>
 </head>
 <body>
-<div class="container">
-    <table border="20">
+    <table border="1">
             <td>User_Id</td>
-            <td>Username</td>
-            <td>Password</td>
+            <td>Fullname</td>
+            <td>email</td>
+            <td>Time created</td>
             <td>Actions</td>
             <?php 
             $conn = mysqli_connect("Localhost","root"  ,"" ,   'ccit06');
             ?>
 
         <?php 
-        $query = $conn->query("SELECT * FROM users");
+        $query = $conn->query("SELECT * FROM services");
         while( $data = mysqli_fetch_array($query) ) {
         ?>
         <tr>
          <td> <?php echo $data['id']?></td>
-         <td> <?php echo $data['username']?></td>
-         <td> <?php echo $data['password_hash']?></td>
-         <td> 
-            <a href="Actions/edit.php?id=<?php echo $data['id']?>"><button type="button">Edit </button>
-            </a>
-            <a href="Actions/delete.php?id=<?php echo $data['id']?>"><button type="button">Delete </button>
-            </a>
+         <td> <?php echo $data['fullname']?></td>
+         <td> <?php echo $data['email']?></td>
+         <td> <?php echo $data['created_at']?></td>
          </td>
         </tr>
     <?php
         }
         ?>
     </table>
-</div>
 </body>
 </html>
