@@ -92,12 +92,12 @@ $username = $_SESSION['username'];
             <li class="nav-item mx-2">
               <a class="nav-link" href="#footer">Contact</a>
             </li>
-            <li class="nav-item dropdown margin-0px" <?php echo $_SESSION["user_id"];?> >
+            <li class="nav-item dropdown" <?php echo $_SESSION["user_id"];?> >
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user"></i></a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="user.php">Profile</a></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
-            <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+            <li><a class="dropdown-item" href="user.php">Manage Profile</a></li>
+            <li><a class="dropdown-item" href="#">Manage Reviews</a></li>
+            <li><a class="dropdown-item" href="logout.php">Logout Account</a></li>
           </ul>
         </li>
           </ul>
