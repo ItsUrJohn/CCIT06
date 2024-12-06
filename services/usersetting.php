@@ -25,7 +25,7 @@ require 'db.php';
     <title>Document</title>
 </head>
 <body>
-    <table border="1">
+    <table border="5">
             <td>User_Id</td>
             <td>Fullname</td>
             <td>email</td>

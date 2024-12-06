@@ -14,6 +14,6 @@ header("Expires: 0");
 
 // Redirect to login page
 $_SESSION['status'] = "Logout Succesfully";
-header("Location: index.php");
+header("Location: Login.php");
 exit;
 ?>
