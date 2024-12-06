@@ -96,7 +96,7 @@ $username = $_SESSION['username'];
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user"></i></a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="user.php">Manage Profile</a></li>
-            <li><a class="dropdown-item" href="#">Manage Reviews</a></li>
+            <li><a class="dropdown-item" href="reviews.php">Manage Reviews</a></li>
             <li><a class="dropdown-item" href="logout.php">Logout Account</a></li>
           </ul>
         </li>
