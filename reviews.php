@@ -113,6 +113,7 @@ $username = $_SESSION['username'];
                         My Account
                     </a>
                     <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="dashboard.php">Home</a></li>
                         <li><a class="dropdown-item" href="logout.php">Log Out</a></li>
                     </ul>
                 </li>
