@@ -100,7 +100,7 @@ $username = $_SESSION['username'];
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand ml-5" href="home.php">Manage Reviews</a>
+        <a class="navbar-brand ml-5" href="dashboard.php">Logo</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarScroll"
             aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -167,7 +167,7 @@ $username = $_SESSION['username'];
 
     <div class="main">
         <div class="content">
-            <h4>Log in Succesful</h4>
+            <h4>Manage Reviews</h4>
             <hr>
             <table class="table table-hover table-collapse">
                 <thead>
@@ -195,7 +195,7 @@ $username = $_SESSION['username'];
                         $lastName = $row['last_name'];
                         $contactNumber = $row['contact_number'];
                         $email = $row['email'];
-
+                    
 
                         ?>
 
