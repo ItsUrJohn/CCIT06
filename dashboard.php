@@ -43,8 +43,8 @@ $username = $_SESSION['username'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/ab915c1825.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -70,7 +70,7 @@ $username = $_SESSION['username'];
         </div>
         <!--Sidebar Body-->
         <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
-          <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
+          <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-5 pe-1">
             <li class="nav-item mx-2">
               <a class="nav-link" aria-current="page" href="#">Home</a>
             </li>
@@ -92,15 +92,22 @@ $username = $_SESSION['username'];
             <li class="nav-item mx-2">
               <a class="nav-link" href="#footer">Contact</a>
             </li>
-            <li class="nav-item dropdown" <?php echo $_SESSION["user_id"];?> >
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user"></i></a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="user.php">Manage Profile</a></li>
-            <li><a class="dropdown-item" href="reviews.php">Manage Reviews</a></li>
-            <li><a class="dropdown-item" href="logout.php">Logout Account</a></li>
           </ul>
-        </li>
-          </ul>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px; margin-left: 80%;">
+                <li class="nav-item dropdown" <?php echo $_SESSION["user_id"]; ?>>
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                        aria-expanded="false">
+                        My Account
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="user.php">Profile</a></li>
+                        <li><a class="dropdown-item" href="reviews.php">Reviews</a></li>
+                        <li><a class="dropdown-item" href="logout.php">Log Out</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
         </div>
       </div>
     </div>
@@ -426,10 +433,11 @@ $username = $_SESSION['username'];
       event.currentTarget.classList.add("active-link");
       document.getElementById(tabname).classList.add("active-tab");
     }
-
-
-
   </script>
+  <!-- Bootstrap Js -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
