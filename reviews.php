@@ -1,4 +1,7 @@
-<?php include('db.php'); ?>
+<?php
+require 'db.php'; 
+
+?>
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
@@ -182,22 +185,27 @@ $username = $_SESSION['username'];
                 </thead>
                 <tbody>
 
-                    <?php
+                <?php
+                // Assuming you have a mysqli connection in $conn
 
-                    $stmt = $conn->prepare("SELECT * FROM `tbl_user`");
-                    $stmt->execute();
+                $stmt = mysqli_prepare($conn, "SELECT * FROM `tbl_user`");
+                $stmt->execute();
+                $result = $stmt->get_result(); // Use get_result() for mysqli
 
-                    $result = $stmt->fetch();
+                if ($result) {
+                while ($row = $result->fetch_assoc()) {
+                $userID = $row['tbl_user_id'];
+                $firstName = $row['first_name'];
+                $lastName = $row['last_name'];
+                $contactNumber = $row['contact_number'];
+                $email = $row['email'];
 
-                    foreach ($result as $row) {
-                        $userID = $row['tbl_user_id'];
-                        $firstName = $row['first_name'];
-                        $lastName = $row['last_name'];
-                        $contactNumber = $row['contact_number'];
-                        $email = $row['email'];
-                    
-
-                        ?>
+                    // Do something with the data;
+                }
+                            } else {
+                                    echo "Error fetching data: " . mysqli_error($conn);
+                                    }
+                                ?>
 
                         <tr>
                             <td id="userID-<?= $userID ?>"><?php echo $userID ?></td>
@@ -213,7 +221,6 @@ $username = $_SESSION['username'];
                         </tr>
 
                         <?php
-                    }
 
                     ?>
                 </tbody>
