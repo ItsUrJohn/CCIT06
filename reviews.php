@@ -200,7 +200,6 @@ $username = $_SESSION['username'];
                 $contactNumber = $row['contact_number'];
                 $email = $row['email'];
 
-                    // Do something with the data;
                 }
                             } else {
                                     echo "Error fetching data: " . mysqli_error($conn);

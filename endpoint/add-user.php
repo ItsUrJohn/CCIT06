@@ -1,5 +1,5 @@
 <?php
-include ('../conn/conn.php');
+include ('../db.php');
 
 $firstName = $_POST['first_name'];
 $lastName = $_POST['last_name'];
@@ -8,22 +8,19 @@ $email = $_POST['email'];
 
 
 try {
-    $stmt = $conn->prepare("SELECT `first_name`, `last_name` FROM `tbl_user` WHERE `first_name` = :first_name AND `last_name` = :last_name");
-    $stmt->execute([
-        'first_name' => $firstName,
-        'last_name'=> $lastName
-    ]);
-    $nameExist = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt = $conn->prepare("SELECT `first_name`, `last_name` FROM `tbl_user` WHERE `first_name` = ? AND `last_name` = ?");
+    $stmt->bind_param("ss", $firstName, $lastName);
+    $stmt->execute();
+    $nameExist = $stmt->get_result()->fetch_assoc();
 
     if (empty($nameExist)) {
-        $conn->beginTransaction();
-
-        $insertStmt = $conn->prepare("INSERT INTO `tbl_user` (`tbl_user_id`, `first_name`, `last_name`, `contact_number`, `email`, `username`, `password`) VALUES (NOT NULL, :first_name, :last_name, :contact_number, :email, :username, :password)");
-        $insertStmt->bindParam(':first_name', $firstName, PDO::PARAM_STR);
-        $insertStmt->bindParam(':last_name', $lastName, PDO::PARAM_STR);
-        $insertStmt->bindParam(':contact_number', $contactNumber, PDO::PARAM_INT);
-        $insertStmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $conn->begin_transaction();
+        $insertStmt = $conn->prepare("INSERT INTO `tbl_user` (`tbl_user_id`, `first_name`, `last_name`, `contact_number`, `email`, `username`) VALUES (NULL, ?, ?, ?, ?, ?)");
+        $insertStmt->bind_param("ssisi", $firstName, $lastName, $contactNumber, $email, $username);
         $insertStmt->execute();
+    }
+        } catch (Exception $e) {
+    // Handle the exception
 
 
         echo "
@@ -34,18 +31,6 @@ try {
         ";
 
         $conn->commit();
-    } else {
-        echo "
-        <script>
-            alert('User Already Exist');
-            window.location.href = 'http://localhost/user-registration-and-login-system/index.php';
-        </script>
-        ";
     }
-
-} catch (PDOException $e) {
-    echo "Error: " . $e->getMessage();
-}
-
 
 ?>

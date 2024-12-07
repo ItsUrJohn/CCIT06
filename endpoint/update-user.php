@@ -1,5 +1,5 @@
 <?php
-include ('../conn/conn.php');
+include ('../db.php');
 
 $updateUserID = $_POST['tbl_user_id'];
 $updateFirstName = $_POST['first_name'];

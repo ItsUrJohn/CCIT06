@@ -1,5 +1,5 @@
 <?php
-include ('../conn/conn.php');
+include ('../db.php');
 
 if (isset($_GET['user'])) {
     $user = $_GET['user'];
@@ -16,14 +16,14 @@ if (isset($_GET['user'])) {
             echo "
             <script>
                 alert('User Deleted Successfully');
-                window.location.href = 'http://localhost/user-registration-and-login-system/home.php';
+                window.location.href = 'http://localhost/CCIT06/reviews.php';
             </script>
             ";
         } else {
             echo "
             <script>
                 alert('User to Delete Subject');
-                window.location.href = 'http://localhost/user-registration-and-login-system/home.php';
+                window.location.href = 'http://localhost/CCIT06/reviews.php';
             </script>
             ";
         }
