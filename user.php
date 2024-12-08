@@ -98,7 +98,6 @@ require 'db.php';
                         My Account
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="reviews.php">Reviews</a></li>
                         <li><a class="dropdown-item" href="dashboard.php">Home</a></li>
                         <li><a class="dropdown-item" href="logout.php">Log Out</a></li>
                     </ul>
