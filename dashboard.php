@@ -103,7 +103,6 @@ $username = $_SESSION['username'];
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="user.php">Profile</a></li>
-                        <li><a class="dropdown-item" href="reviews.php">Reviews</a></li>
                         <li><a class="dropdown-item" href="logout.php">Log Out</a></li>
                     </ul>
                 </li>
@@ -267,6 +266,10 @@ $username = $_SESSION['username'];
         width: 95%px;
         height: 500px;
         margin-top: -50px;
+      }
+      .content h4{
+        text-align: center;
+        font-size: 3em;
       }
 
         #editBtn,

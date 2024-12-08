@@ -15,7 +15,7 @@ try {
 
     if (empty($nameExist)) {
         $conn->begin_transaction();
-        $insertStmt = $conn->prepare("INSERT INTO `tbl_user` (`tbl_user_id`, `first_name`, `last_name`, `contact_number`, `email`, `username`) VALUES (NULL, ?, ?, ?, ?, ?)");
+        $insertStmt = $conn->prepare("INSERT INTO `tbl_user` (`tbl_user_id`, `first_name`, `last_name`, `contact_number`, `email`,) VALUES (NULL, ?, ?, ?, ?, ?)");
         $insertStmt->bind_param("ssisi", $firstName, $lastName, $contactNumber, $email, $username);
         $insertStmt->execute();
     }
@@ -26,7 +26,7 @@ try {
         echo "
         <script>
             alert('Registered Successfully');
-            window.location.href = 'http://localhost/user-registration-and-login-system/index.php';
+            window.location.href = 'http://localhost/CCIT06/dashboard.php';
         </script>
         ";
 
