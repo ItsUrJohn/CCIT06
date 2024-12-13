@@ -249,238 +249,87 @@ $username = $_SESSION['username'];
         <h2>REVIEWS</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, enim.</p>
       </div>
-      <?php
-      require 'db.php';
-
-      ?>
-      <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-
-        .main {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          background-color: rgb(6, 6, 6);
-          height: 100vh;
-        }
-
-        .content {
-          border: 2px solid;
-          border-radius: 10px;
-          background-color: rgb(240, 240, 240);
-          padding: 20px;
-          width: 95%px;
-          height: 500px;
-          margin-top: -50px;
-        }
-
-        .content h4 {
-          text-align: center;
-          font-size: 3em;
-        }
-
-        #editBtn,
-        #deleteBtn {
-          font-size: 20px;
-          width: 30px;
-        }
-      </style>
-      <div class="modal fade mt-5" id="updateUserModal" tabindex="-1" aria-labelledby="updateUser" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="updateUserModal">Update User</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+      <div class="row row-cols-lg-3">
+        <div class="col">
+          <div class="testimonials mt-4">
+            <div class="d-flex">
+              <img src="image/bee.jpg" alt="">
+            
+            <div class="ms-2 mb-2">
+              <h3>Killer Bee</h3>
+              <a href="">@client</a>
             </div>
-            <div class="modal-body">
-              <form action="./endpoint/update-user.php" method="POST">
-                <div class="form-group row">
-                  <div class="col-6">
-                    <input type="text" name="tbl_user_id" id="updateUserID" hidden>
-                    <label for="updateFirstName">First Name:</label>
-                    <input type="text" class="form-control" id="updateFirstName" name="first_name">
-                  </div>
-                  <div class="col-6">
-                    <label for="updateLastName">Last Name:</label>
-                    <input type="text" class="form-control" id="updateLastName" name="last_name">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-5">
-                    <label for="updateContactNumber">Contact Number:</label>
-                    <input type="number" class="form-control" id="updateContactNumber" name="contact_number"
-                      maxlength="11">
-                  </div>
-                  <div class="col-7">
-                    <label for="updateEmail">Email:</label>
-                    <input type="text" class="form-control" id="updateEmail" name="email">
-                  </div>
-                </div>
-                <button type="submit" class="btn btn-dark login-register form-control">Update</button>
-              </form>
+          </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, quos.</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="testimonials mt-4">
+            <div class="d-flex">
+              <img src="image/kakashi.jpg" alt="">
+            
+            <div class="ms-2 mb-2">
+              <h3>Kakashi Hatake</h3>
+              <a href="">@client</a>
             </div>
-
+          </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, quos.</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="testimonials mt-4">
+            <div class="d-flex">
+              <img src="image/minato.jpg" alt="">
+            
+            <div class="ms-2 mb-2">
+              <h3>Minato Namekaze</h3>
+              <a href="">@client</a>
+            </div>
+          </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, quos.</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="testimonials mt-4">
+            <div class="d-flex">
+              <img src="image/Naruto Uzumaki.jpg" alt="">
+            
+            <div class="ms-2 mb-2">
+              <h3>Barion Mode</h3>
+              <a href="">@client</a>
+            </div>
+          </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, quos.</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="testimonials mt-4">
+            <div class="d-flex">
+              <img src="image/gaara.jpg" alt="">
+            
+            <div class="ms-2 mb-2">
+              <h3>Gaara</h3>
+              <a href="">@client</a>
+            </div>
+          </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, quos.</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="testimonials mt-4">
+            <div class="d-flex">
+              <img src="image/sasuke.jpg" alt="">
+            
+            <div class="ms-2 mb-2">
+              <h3>Sasuke Uchiha</h3>
+              <a href="">@client</a>
+            </div>
+          </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, quos.</p>
           </div>
         </div>
       </div>
-      <div class="main">
-        <div class="content">
-          <h4>Manage Reviews</h4>
-          <hr>
-          <table class="table table-hover table-collapse">
-            <thead>
-              <tr>
-                <th scope="col">User ID</th>
-                <th scope="col">First Name</th>
-                <th scope="col">Last Name</th>
-                <th scope="col">Contact Number</th>
-                <th scope="col">Email</th>
-                <th scope="col">Action</th>
-              </tr>
-            </thead>
-            <tbody>
-
-              <?php
-              // Assuming you have a mysqli connection in $conn
-              
-              $stmt = mysqli_prepare($conn, "SELECT * FROM `tbl_user`");
-              $stmt->execute();
-              $result = $stmt->get_result(); // Use get_result() for mysqli
-              
-              if ($result) {
-                while ($row = $result->fetch_assoc()) {
-                  $userID = $row['tbl_user_id'];
-                  $firstName = $row['first_name'];
-                  $lastName = $row['last_name'];
-                  $contactNumber = $row['contact_number'];
-                  $email = $row['email'];
-
-                }
-              } else {
-                echo "Error fetching data: " . mysqli_error($conn);
-              }
-              ?>
-
-              <tr>
-                <td id="userID-<?= $userID ?>"><?php echo $userID ?></td>
-                <td id="firstName-<?= $userID ?>"><?php echo $firstName ?></td>
-                <td id="lastName-<?= $userID ?>"><?php echo $lastName ?></td>
-                <td id="contactNumber-<?= $userID ?>"><?php echo $contactNumber ?></td>
-                <td id="email-<?= $userID ?>"><?php echo $email ?></td>
-                <td>
-                  <button id="editBtn" onclick="update_user(<?php echo $userID ?>)" title="Edit">&#9998;</button>
-                  <button id="deleteBtn" onclick="delete_user(<?php echo $userID ?>)">&#128465;</button>
-                </td>
-              </tr>
-
-              <?php
-
-              ?>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div class="panel-body">
-        <button class="btn btn-primary btn" data-toggle="modal" data-target="#myModal1">
-          Add New Reviews
-        </button>
-        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-          aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Add New Reviews</h4>
-              </div>
-              <form method="post">
-                <div class="modal-body">
-                  <div class="form-group">
-                    <label>First Name</label>
-                    <input name="newus" class="form-control">
-                  </div>
-                </div>
-                <div class="modal-body">
-                  <div class="form-group">
-                    <label>Last Name</label>
-                    <input name="newps" class="form-control" >
-                  </div>
-                </div>
-                <div class="modal-body">
-                  <div class="form-group">
-                    <label>Contact Number</label>
-                    <input name="newps" class="form-control" >
-                  </div>
-                </div>
-                <div class="modal-body">
-                  <div class="form-group">
-                    <label>Email</label>
-                    <input name="newps" class="form-control" >
-                  </div>
-                </div>
-
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-                  <input type="submit" name="in" value="Add" class="btn btn-primary">
-              </form>
-
-            </div>
-          </div>
-        </div>
-      </div>
-                  <?php
-                    if (isset($_POST['tbl_user_id'])) {
-                        $newfirstName = $_POST['first_name'];
-                        $newlastName = $_POST['last_name'];
-                        $newcontactNumber = $_POST['contact_number'];
-                        $newemail = $_POST['email'];
-
-                        $newsql = "INSERT INTO tbl_user (firstName,lastName, contactNumber, email) values ('$first_name','$last_name','$contact_number', 'email')";
-                        if (mysqli_query($con, $newsql)) {
-                            echo ' <script language="javascript" type="text/javascript"> alert("User name and password Added") </script>';
-
-
-                        }
-                        header("Location: dashboard.php");
-                    }
-                    ?>
-
-      <script>
-        // Update user
-        function update_user(id) {
-          $("#updateUserModal").modal("show");
-
-          let updateUserID = $("#userID-" + id).text();
-          let updateFirstName = $("#firstName-" + id).text();
-          let updateLastName = $("#lastName-" + id).text();
-          let updateContactNumber = $("#contactNumber-" + id).text();
-          let updateEmail = $("#email-" + id).text();
-
-          console.log(updateFirstName);
-          console.log(updateLastName);
-
-          $("#updateUserID").val(updateUserID);
-          $("#updateFirstName").val(updateFirstName);
-          $("#updateLastName").val(updateLastName);
-          $("#updateContactNumber").val(updateContactNumber);
-          $("#updateEmail").val(updateEmail);
-
-        }
-
-        // Delete user
-        function delete_user(id) {
-          if (confirm("Do you want to delete this user?")) {
-            window.location = "./endpoint/delete-user.php?user=" + id;
-          }
-        }
-
-
-      </script>
     </div>
-  </section>
   <!--CTA-->
   <div id="ctaaa" class="d-flex align-items-center">
     <div class="container">

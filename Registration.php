@@ -6,10 +6,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = htmlspecialchars($_POST['username']);
     $password = $_POST['password'];
     $passwordConfirm = $_POST['password_confirm'];
-
+	$erorrs = array();
+	if(empty($username) OR empty($password) OR empty($passwordConfirm)) {
+		array_push($erorrs,"All feilds are required");
+	}
+	if(strlen($password) < 8) {
+	array_push($erorrs,"Password must 8 charactes long");
+	}
     if ($password !== $passwordConfirm) {
         die('Passwords do not match.');
-    }
+	}
 
     $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
@@ -27,19 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
-	      <?php
-
-		if(isset($_SESSION['status'])) 
-		{  ?>
-				<div class="alert alert-warning alert-dismissible fade show" role="alert">
-					<strong> Bossing!!</strong> <?php echo $_SESSION['status']; ?>
-		  				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-				</div>
-			<?php 
-  		unset($_SESSION['status']);
-}
-?>
-
 <style>
 	*{
 	margin: 0;
