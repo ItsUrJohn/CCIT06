@@ -1,6 +1,10 @@
 <?php 
 session_start();
-require 'db.php';
+require_once 'db.php';
+
+$query = "SELECT * FROM users";
+$result = mysqli_query($conn, $query);
+
 ?>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
@@ -18,31 +22,6 @@ require 'db.php';
         align-items: center;
         background-color: rgb(6, 6, 6);
         height: 100vh;
-    }
-
-    .login,
-    .registration {
-        border: 2px solid;
-        border-radius: 20px;
-        margin: 10px;
-        padding: 50px;
-        width: 500px;
-        max-width: 500px;
-        background-color: rgb(123, 118, 118);
-    }
-
-    .login-form,
-    .registration-form {
-        margin-top: 30px;
-    }
-
-    .registrationForm {
-        font-size: 13px;
-        margin-top: -15px;
-        color: blue;
-        text-decoration: underline;
-        text-align: center;
-        cursor: pointer;
     }
 
     .content {
@@ -82,7 +61,7 @@ require 'db.php';
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <title>Document</title>
 </head>
-<body>
+<body class="bg-dark">
     
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand ml-5" href="dashboard.php">Logo</a>
@@ -110,34 +89,42 @@ require 'db.php';
       
 <!----->
 <div class="container">
-    <table border="5">
-            <td>User_Id</td>
-            <td>Username</td>
-            <td>Password</td>
-            <td>Actions</td>
-            <?php 
-            $conn = mysqli_connect("Localhost","root"  ,"" ,   'ccit06');
-            ?>
+    <div class="row mt-5">
+        <div class="col">
+            <div class="card mt-5">
+                <div class="card-header">
+                    <h2 class="display-6 text-center">Admin Account</h2>   
+                </div>
+                <div class="card-body">
+                    <table class="table table-border text-center">
+                        <tr class="bg-dark text-white">
+                            <td>UserId</td>
+                            <td>Username</td>
+                            <td>Password</td>
+                            <td>Edit</td>
+                            <td>Delete</td>
 
-        <?php 
-        $query = $conn->query("SELECT * FROM users");
-        while( $data = mysqli_fetch_array($query) ) {
-        ?>
-        <tr>
-         <td> <?php echo $data['id']?></td>
-         <td> <?php echo $data['username']?></td>
-         <td> <?php echo $data['password_hash']?></td>
-         <td> 
-            <a href="Actions/edit.php?id=<?php echo $data['id']?>"><button type="button">Edit </button>
-            </a>
-            <a href="Actions/delete.php?id=<?php echo $data['id']?>"><button type="button">Delete </button>
-            </a>
-         </td>
-        </tr>
-    <?php
-        }
-        ?>
-    </table>
+                        </tr>
+                        <tr>
+                            <?php 
+                            while($row = mysqli_fetch_assoc($result)) {
+
+                                ?>
+                                <td><?php echo $row['id'];?></td>
+                                <td><?php echo $row['username'];?></td>
+                                <td><?php echo $row['password_hash'];?></td>
+                                <td><a href="Actions/edit.php?id=<?php echo $row['id'];?>" class="btn btn-primary">Edit</a></td>
+                                <td><a href="Actions/delete.php?id=<?php echo $row['id'];?>" class="btn btn-primary">Delete</a></td>
+                            </tr> 
+                                <?php
+
+                            } 
+                            ?>  
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- Bootstrap Js -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
