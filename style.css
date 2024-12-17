@@ -27,7 +27,7 @@ body{
 }
  #banner {
     height: 90vh;
-    background: linear-gradient(to right, hsla(0, 2%, 12%, 0.856), rgba(44, 42, 42, 0.315)), url(image/naruto.jpg.jpg);
+    background: linear-gradient(to right, hsla(0, 2%, 12%, 0.856), rgba(44, 42, 42, 0.315)), url(image/try.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -170,7 +170,7 @@ section {
 #cta {
     margin-top: 50px;
     height: 70vh;
-    background: linear-gradient(to right, hsla(0, 2%, 17%, 0.856), rgba(44, 42, 42, 0.315)), url(image/sasuke-uchiha-3840x2160-11023.png);
+    background: linear-gradient(to right, hsla(0, 2%, 17%, 0.856), rgba(44, 42, 42, 0.315)), url(image/picture.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -226,7 +226,7 @@ section {
 #ctaa {
     margin-top: 50px;
     height: 70vh;
-    background: linear-gradient(to right, hsla(0, 2%, 17%, 0.856), rgba(44, 42, 42, 0.315)), url(image/Mikael\ Lima.jpg);
+    background: linear-gradient(to right, hsla(0, 2%, 17%, 0.856), rgba(44, 42, 42, 0.315)), url(image/Hero.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -290,22 +290,22 @@ section {
     border-radius: 0 !important;
 }
 .accordion-button{
-    background-color: #fff;
+    background-color: #f1eded;
     border-bottom: 1px solid #4e4a4a;
     border-radius: 0 !important;
     padding: 15px;
     font-size: 15px;
     font-weight: 500;
-    color: #d3d3eb;
+    color: #1b1b1c;
     outline: none;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
 .accordion-body{
-    border-left: 3px solid #171617;
+    border-left: 3px solid #d0ccd0;
     padding: 10px 15px;
     margin-left: 0;
-    background-color: #caa1a1;
+    background-color: #656262;
 }
 .accordion-button:not(.collapsed){
     background-color: #c6c6f1;
@@ -316,7 +316,7 @@ section {
     color: #fff;
 }
 #faq{
-    background-color: #141413;
+    background-color: #b8b8b5;
 }
 footer {
     margin-top: 1px;

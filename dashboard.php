@@ -53,7 +53,7 @@ $username = $_SESSION['username'];
   <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="image/img.jpg" alt="Logo" height="50  px">
+        <img src="image/logo.png" alt="Logo" height="50  px">
       </a>
       <!--Toggle btn-->
       <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
@@ -87,6 +87,9 @@ $username = $_SESSION['username'];
               <a class="nav-link" href="#portfolio">Pictures</a>
             </li>
             <li class="nav-item mx-2">
+              <a class="nav-link" href="reviews/view_post.php">Reviews</a>
+            </li>
+            <li class="nav-item mx-2">
               <a class="nav-link" href="#faq">FAQ</a>
             </li>
             <li class="nav-item mx-2">
@@ -101,7 +104,6 @@ $username = $_SESSION['username'];
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="user.php">Profile</a></li>
-                  <li><a class="dropdown-item" href="reviews/view_post.php">Reviews</a></li>
                   <li><a class="dropdown-item" href="logout.php">Log Out</a></li>
                 </ul>
               </li>
@@ -116,10 +118,11 @@ $username = $_SESSION['username'];
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-light">
-          <h1>Naruto Shippuden</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt eligendi sed quaerat perferendis deleniti
-            veritatis ullam, neque omnis quidem tempora?</p>
-          <a href="#about" class="btn btn-brand">Please Click Here!</a>
+          <h1>Crossfire</h1>
+          <p>The world has change drastically since the dawn of the melinium. Natiopns and organizations have started
+            walking down the raod to self-preservation with the impending signs of resource and global warming</p>
+          <a href="https://cfph.onstove.com/GameInfo?gameInfoCategory=102#mercenary" class="btn btn-brand">Please Click
+            Here!</a>
         </div>
       </div>
     </div>
@@ -130,32 +133,46 @@ $username = $_SESSION['username'];
     <div class="container">
       <div class="row">
         <div class="about-col-1">
-          <img src="image/team7.jpg">
+          <img src="image/about.png">
         </div>
         <div class="about-col-2">
-          <h1 class="sub-title">About Naruto Shippuden</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore dolores mollitia fugit architecto
-            consequatur animi facere nobis? Tempora dolorem, officiis similique, sint maiores, saepe fugiat nostrum
-            voluptate magnam officia perspiciatis?</p>
+          <h1 class="sub-title">Crossfire</h1>
+          <p>The world has changed drastically since the dawn of the new millennium. Nations and organizations have
+            started walking down the road of self-preservation with the impending signs of resource scarcity and global
+            warming while anarchists and terrorists are able to run wild in areas outside life interests of the world's
+            super powers. Disgruntled with this "new world order" many soldiers from the world's leading special forces
+            founded the mercenary corporation: "Global Risk". This organization stands to uphold peace and combat
+            terrorism around the world to prevent the world from falling into chaos. The only wars they participate in
+            are those with justifiable and moral causes, regardless of how much they get paid; almost as to atone for
+            the atrocities they have committed while serving the world's super powers. The Global Risk Corporation's
+            main clients are developing countries that don't have regular armies where terrorism runs rampant.</p>
 
           <div class="tab-titles">
-            <p class="tab-links active-link" onclick="opentab('training1')">Sakura</p>
-            <p class="tab-links" onclick="opentab('training2')">Sasuke</p>
-            <p class="tab-links" onclick="opentab('training3')">Naruto</p>
+            <p class="tab-links active-link" onclick="opentab('training1')">Global Risk</p>
+            <p class="tab-links" onclick="opentab('training2')">Black List</p>
+            <p class="tab-links" onclick="opentab('training3')">Synopsis</p>
           </div>
           <div class="tab-contents active-tab" id="training1">
             <ul>
-              <li><span>UNKNOWN</span><br>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</br></li>
+              <li><span>Global Risk</span><br>Global Risk is a mercenary group founded by former SAS member Lord
+                Alexandro. Soon after its founding, American entrepreneur Michael Norman structured the organization
+                into a corporation in order to make it self-sufficient.</br></li>
             </ul>
           </div>
           <div class="tab-contents" id="training2">
             <ul>
-              <li><span>UNKNOWN</span><br>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</br></li>
+              <li><span>Black List</span><br>Black List is a mercenary organization which mainly performs special
+                operations for terrorist groups and rebel armies. The origins of this organization are unknown but they
+                have claimed responsibility of the gravest terrorist attacks since the start of the new millennium.</br>
+              </li>
             </ul>
           </div>
           <div class="tab-contents" id="training3">
             <ul>
-              <li><span>UNKNOWN</span><br>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</br></li>
+              <li><span>Synopsis</span><br>The world has changed drastically since the dawn of the new millennium.
+                Nations and organizations have started walking down the road of self-preservation with the impending
+                signs of resource scarcity and global warming while anarchists and terrorists are able to run wild in
+                areas</br></li>
             </ul>
           </div>
         </div>
@@ -165,25 +182,25 @@ $username = $_SESSION['username'];
   <!--SERVICES-->
   <div id="services">
     <div class="container">
-      <h1 class="sub-title text-center">Articles</h1>
+      <h1 class="sub-title text-center">Services</h1>
       <div class="services-list">
         <div>
           <i class="fa-regular fa-newspaper"></i>
-          <h2>Lorem ipsum.</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, animi?</p>
-          <a href="#portfolio">Click Here</a>
+          <h2>Gaming</h2>
+          <p>Crossfire is a video game that was released in the Philippines in 2009.</p>
+          <a href="https://crossfirefps.fandom.com/wiki/CF_Philippines">More Info</a>
         </div>
         <div>
           <i class="fa-regular fa-newspaper"></i>
-          <h2>Lorem ipsum.</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, animi?</p>
-          <a href="#portfolio">Click Here</a>
+          <h2>Membership</h2>
+          <p> Crossfire Philippines offers membership services through STOVE</p>
+          <a href="https://crossfirefps.fandom.com/wiki/CF_Philippines">More info</a>
         </div>
         <div>
           <i class="fa-regular fa-newspaper"></i>
-          <h2>Lorem ipsum.</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, animi?</p>
-          <a href="#portfolio">Click Here</a>
+          <h2>Video uploads</h2>
+          <p>STOVE's board features allow users to upload videos</p>
+          <a href="https://crossfirefps.fandom.com/wiki/CF_Philippines">More Info</a>
         </div>
       </div>
     </div>
@@ -193,10 +210,11 @@ $username = $_SESSION['username'];
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-light">
-          <h1>Naruto Shippuden</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt eligendi sed quaerat perferendis deleniti
-            veritatis ullam, neque omnis quidem tempora?</p>
-          <a href="#about" class="btn btn-brand">Please Click Here!</a>
+          <h1>Crossfire</h1>
+          <p>The world has change drastically since the dawn of the melinium. Natiopns and organizations have started
+            walking down the raod to self-preservation with the impending signs of resource and global warming</p>
+          <a href="https://cfph.onstove.com/GameInfo?gameInfoCategory=102#mercenary" class="btn btn-brand">Please Click
+            Here!</a>
         </div>
       </div>
     </div>
@@ -207,21 +225,21 @@ $username = $_SESSION['username'];
       <h1 class="sub-title text-center" href="#">PICTURES</h1>
       <div class="work-list">
         <div class="work">
-          <img src="image/naruto1.jpg">
+          <img src="image/Phantom.png">
           <div class="layer">
-            <a href="image/naruto1.jpg">View Picture</a>
+            <a href="image/Phantom.png">View Picture</a>
           </div>
         </div>
         <div class="work">
-          <img src="image/naruto2.jpg">
+          <img src="image/Switcher.jpg">
           <div class="layer">
-            <a href="image/naruto2.jpg">View Picture</a>
+            <a href="image/Switcher.jpg">View Picture</a>
           </div>
         </div>
         <div class="work">
-          <img src="image/naruto3.jpg">
+          <img src="image/Viper.jpg">
           <div class="layer">
-            <a href="image/naruto3.jpg">View Picture</a>
+            <a href="image/Viper.jpg">View Picture</a>
           </div>
         </div>
       </div>
@@ -232,10 +250,10 @@ $username = $_SESSION['username'];
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-light">
-          <h1>Naruto Shippuden</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt eligendi sed quaerat perferendis deleniti
-            veritatis ullam, neque omnis quidem tempora?</p>
-          <a href="#about" class="btn btn-brand">Please Click Here!</a>
+          <h1>Crossfire</h1>
+          <p>The world has change drastically since the dawn of the melinium. Natiopns and organizations have started
+          walking down the raod to self-preservation with the impending signs of resource and global warming</p>
+          <a href="https://cfph.onstove.com/GameInfo?gameInfoCategory=102#mercenary" class="btn btn-brand">Please Click Here!</a>
         </div>
       </div>
     </div>
@@ -244,23 +262,24 @@ $username = $_SESSION['username'];
   <section id="faq">
     <div class="faq-section">
       <div class="container text-center">
-        <h2>FAQ</h2>
+      <h1 class="sub-title text-center" href="#">FAQ</h1>
         <div class="accordion accordion-flush" id="accordionFlushExample">
           <div class="accordion-item">
             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              <button class="accordion-button collapsed text-bg-dark " type="button" data-bs-toggle="collapse"
                 data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                 Accordion Item #1
               </button>
             </h2>
             <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
               <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-                <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                <code>.accordion-flush</code> class. This is the first item's accordion body.
+              </div>
             </div>
           </div>
           <div class="accordion-item">
             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              <button class="accordion-button collapsed text-bg-dark" type="button" data-bs-toggle="collapse"
                 data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
                 Accordion Item #2
               </button>
@@ -268,12 +287,13 @@ $username = $_SESSION['username'];
             <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
               <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
                 <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being
-                filled with some actual content.</div>
+                filled with some actual content.
+              </div>
             </div>
           </div>
           <div class="accordion-item">
             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              <button class="accordion-button collapsed text-bg-dark" type="button" data-bs-toggle="collapse"
                 data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
                 Accordion Item #3
               </button>
@@ -282,7 +302,8 @@ $username = $_SESSION['username'];
               <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
                 <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
                 happening here in terms of content, but just filling up the space to make it look, at least at first
-                glance, a bit more representative of how this would look in a real-world application.</div>
+                glance, a bit more representative of how this would look in a real-world application.
+              </div>
             </div>
           </div>
         </div>
@@ -295,10 +316,10 @@ $username = $_SESSION['username'];
       <div class="row al">
         <div class="col-md-3 col-sm-6 text-lg-start text-center">
           <a class="navbar-brand" href="#">
-            <img src="image/img.jpg" alt="Logo" height="60px">
+            <img src="image/logo.png" alt="Logo" height="60px">
           </a>
           <h5 class="mt-4">About Us</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+          <p></p>
         </div>
         <div class="col-md-3 col-sm-6 text-lg-start ps-lg-5 ps-0 text-center ">
           <h5>Services</h5>

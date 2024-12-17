@@ -57,7 +57,7 @@ body{
 	justify-content: center;
 	align-content: center;
 	min-height: 100vh;
-	background: url(image/sasuke-uchiha-3840x2160-11023.png) no-repeat;
+	background: url(image/login.jpg) no-repeat;
 	background-size: cover;
 	background-position: center;
 	align-items: center;
@@ -95,7 +95,7 @@ header{
 }
 .form-box h2{
 	font-size: 2em;
-	color: rgb(1, 2, 21);
+	color: rgb(234, 234, 236);
 	text-align: center;
 }
 .input-box{
@@ -147,11 +147,11 @@ header{
 	justify-content: space-between;
 }
 .remember-forgot label input{
-	accent-color: #2b2d2e;
+	accent-color:rgb(26, 29, 30);
 	margin-right: 3px;
 }
 .remember-forgot a{
-	color: #000000;
+	color:rgb(246, 242, 242);
 	text-decoration: none;
 }
 .remember-forgot a:hover{
@@ -160,13 +160,12 @@ header{
 .btn{
 	width: 100%;
 	height: 45px;
-	border: none;
 	outline: none;
-	background: #2b2d2e;
+	border-radius: 20px;
 	border-radius: 6px;
 	cursor: pointer;
 	font-size: 1em;
-	color: #fff;
+	background-color:rgb(218, 210, 210);
 	font-weight: 500;
 }
 
@@ -181,7 +180,11 @@ header{
 </head>
 <body>
 	 <header>
-		<h2 class="Logo">Logo</h2>
+		<h2 class="Logo">
+			<a href="#">
+			<img src="image/logo.png" alt="Logo" height="50  px">
+			</a>
+		</h2>
 	 </header>
 	<div class="wrapper">
 		<div class="form-box login">

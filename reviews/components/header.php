@@ -2,7 +2,9 @@
 
    <section class="flex">
 
-      <a href="\CCIT06\dashboard.php" class="logo">Logo.</a>
+      <a href="\CCIT06\dashboard.php" class="logo">
+      <img src="\CCIT06\image\logo.png" alt="Logo" height="50  px">
+      </a>
 
       <nav class="navbar">
          <a href="all_posts.php" class="far fa-eye"></a>
@@ -30,7 +32,7 @@
          <?php }; ?>   
          <p><?= $fetch_profile['name']; ?></p>
          <a href="update.php" class="btn">update profile</a>
-         <a href="components/logout.php" class="delete-btn" onclick="return confirm('logout from this website?');">logout</a>
+         <a href="\CCIT06\logout.php" class="delete-btn" onclick="return confirm('logout from this website?');">logout</a>
          <?php }else{ ?>
             <div class="flex-btn">
                <p>please login or register!</p>
