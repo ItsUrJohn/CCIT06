@@ -64,7 +64,9 @@ $result = mysqli_query($conn, $query);
 <body class="bg-dark">
     
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand ml-5" href="dashboard.php">Logo</a>
+        <a class="navbar-brand ml-5" href="dashboard.php">
+                <img src="image/img.jpg" alt="Logo" height="50  px">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarScroll"
             aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

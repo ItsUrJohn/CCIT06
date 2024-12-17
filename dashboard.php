@@ -87,9 +87,6 @@ $username = $_SESSION['username'];
               <a class="nav-link" href="#portfolio">Pictures</a>
             </li>
             <li class="nav-item mx-2">
-              <a class="nav-link" href="#reviews">Reviews</a>
-            </li>
-            <li class="nav-item mx-2">
               <a class="nav-link" href="#faq">FAQ</a>
             </li>
             <li class="nav-item mx-2">
@@ -104,6 +101,7 @@ $username = $_SESSION['username'];
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="user.php">Profile</a></li>
+                  <li><a class="dropdown-item" href="reviews/view_post.php">Reviews</a></li>
                   <li><a class="dropdown-item" href="logout.php">Log Out</a></li>
                 </ul>
               </li>
@@ -242,108 +240,6 @@ $username = $_SESSION['username'];
       </div>
     </div>
   </div>
-  <!--Reviews-->
-  <section id="reviews">
-    <div class="container">
-      <div class="text-center">
-        <h2>REVIEWS</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, enim.</p>
-      </div>
-      <div class="row row-cols-lg-3">
-        <div class="col">
-          <div class="testimonials mt-4">
-            <div class="d-flex">
-              <img src="image/bee.jpg" alt="">
-            
-            <div class="ms-2 mb-2">
-              <h3>Killer Bee</h3>
-              <a href="">@client</a>
-            </div>
-          </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, quos.</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="testimonials mt-4">
-            <div class="d-flex">
-              <img src="image/kakashi.jpg" alt="">
-            
-            <div class="ms-2 mb-2">
-              <h3>Kakashi Hatake</h3>
-              <a href="">@client</a>
-            </div>
-          </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, quos.</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="testimonials mt-4">
-            <div class="d-flex">
-              <img src="image/minato.jpg" alt="">
-            
-            <div class="ms-2 mb-2">
-              <h3>Minato Namekaze</h3>
-              <a href="">@client</a>
-            </div>
-          </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, quos.</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="testimonials mt-4">
-            <div class="d-flex">
-              <img src="image/Naruto Uzumaki.jpg" alt="">
-            
-            <div class="ms-2 mb-2">
-              <h3>Barion Mode</h3>
-              <a href="">@client</a>
-            </div>
-          </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, quos.</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="testimonials mt-4">
-            <div class="d-flex">
-              <img src="image/gaara.jpg" alt="">
-            
-            <div class="ms-2 mb-2">
-              <h3>Gaara</h3>
-              <a href="">@client</a>
-            </div>
-          </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, quos.</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="testimonials mt-4">
-            <div class="d-flex">
-              <img src="image/sasuke.jpg" alt="">
-            
-            <div class="ms-2 mb-2">
-              <h3>Sasuke Uchiha</h3>
-              <a href="">@client</a>
-            </div>
-          </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, quos.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  <!--CTA-->
-  <div id="ctaaa" class="d-flex align-items-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-light">
-          <h1>Naruto Shippuden</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt eligendi sed quaerat perferendis deleniti
-            veritatis ullam, neque omnis quidem tempora?</p>
-          <a href="#about" class="btn btn-brand">Please Click Here!</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!--Accordium-->
   <section id="faq">
     <div class="faq-section">
