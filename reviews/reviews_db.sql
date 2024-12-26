@@ -38,12 +38,12 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `title`, `image`) VALUES
-('h12FAnxY6JoXb51iDpda', '01 example post title', 'post_1.webp'),
-('sRKX0vSREJbBzO07wM1H', '02 example post title', 'post_2.webp'),
-('G6zDaxTTS0fV5UT4BQ46', '03 example post title', 'post_3.webp'),
-('6zQRsklaYIO38cLIgYZN', '04 example post title', 'post_4.webp'),
-('mMj2FWPRVWZPsfOsjSUL', '05 example post title', 'post_5.webp'),
-('hK2tgabAaK1c1FAak6UW', '06 example post title', 'post_6.webp');
+('1', 'Parkour Mode', 'post_1.jpg'),
+('2', 'Zombie vs Ghost', 'post_2.jpg'),
+('3', 'Super Soldier', 'post_3.jpg'),
+('4', 'Knigth Mode', 'post_4.jpg'),
+('5L', 'Free For All', 'post_5.jpg'),
+('6', 'Captain Mode', 'post_6.jpg');
 
 -- --------------------------------------------------------
 
