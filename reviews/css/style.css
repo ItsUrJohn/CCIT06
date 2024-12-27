@@ -136,7 +136,7 @@ section{
 .header{
    position: sticky;
    top: 0; left: 0; right: 0;
-   background-color: var(--black);
+   background-color: #242222;
    z-index: 1000;
 }
 
